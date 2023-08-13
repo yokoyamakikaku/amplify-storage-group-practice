@@ -4,6 +4,7 @@ import {
   useTheme,
   Button,
   View,
+  Flex
 } from "@aws-amplify/ui-react"
 import { useForm } from "react-hook-form"
 
@@ -19,9 +20,11 @@ const UploadFile = () => {
   return (
     <View maxWidth={theme.breakpoints.values.medium}>
       <form action="">
-        <Button as="label" htmlFor="fileInput"></Button>
-        <input id="fileInput" type="file" {...register('file')} />
-        <Button>Upload</Button>
+        <Flex direction="column">
+          <Button as="label" htmlFor="fileInput"></Button>
+          <input id="fileInput" type="file" {...register('file')} />
+          <Button>Upload</Button>
+        </Flex>
       </form>
     </View>
   )
