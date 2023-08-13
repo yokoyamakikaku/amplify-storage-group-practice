@@ -1,6 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
+    "identityPoolName": "amplifystoragegroupp409e85e5_identitypool_0cb5e16c",
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "amplif409e85e5",
     "userPoolName": "amplifystoragegroupp409e85e5_userpool_409e85e5",
     "autoVerifiedAttributes": [
@@ -33,7 +35,7 @@
     "userpoolClientSetAttributes": false,
     "sharedId": "409e85e5",
     "resourceName": "amplifystoragegroupp409e85e5",
-    "authSelections": "userPoolOnly",
+    "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
     "usernameAttributes": [
       "email"
@@ -83,6 +85,8 @@
     },
     "permissions": [],
     "authProviders": [],
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreTokenGeneration\",\n    \"lambdaFunctionName\": \"amplifystoragegroupp409e85e5PreTokenGeneration\"\n  }\n]"
+    "authTriggerConnections": [
+      "{\"triggerType\":\"PreTokenGeneration\",\"lambdaFunctionName\":\"amplifystoragegroupp409e85e5PreTokenGeneration\"}"
+    ]
   }
 }

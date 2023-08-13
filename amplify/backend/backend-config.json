@@ -42,7 +42,8 @@
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
-            "AppClientID"
+            "AppClientID",
+            "IdentityPoolId"
           ],
           "category": "auth",
           "resourceName": "amplifystoragegroupp409e85e5"
@@ -75,6 +76,35 @@
           "resourceName": "amplifystoragegroupp409e85e5PreTokenGeneration"
         }
       ]
+    }
+  },
+  "storage": {
+    "s3f77bbc35": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifystoragegroupp409e85e5"
+        },
+        {
+          "attributes": [
+            "adminGroupRole"
+          ],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        },
+        {
+          "attributes": [
+            "staffGroupRole"
+          ],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

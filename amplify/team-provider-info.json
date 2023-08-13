@@ -22,6 +22,9 @@
           "deploymentBucketName": "amplify-amplifystoragegroupp-main-103358-deployment",
           "s3Key": "amplify-builds/amplifystoragegroupp409e85e5PreTokenGeneration-6b64513936356f556b31-build.zip"
         }
+      },
+      "storage": {
+        "s3f77bbc35": {}
       }
     }
   }
