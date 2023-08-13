@@ -35,7 +35,7 @@ const ViewUser = () => {
           <ExpanderItem title="Payload" value="payload">
             <Table>
               <TableBody>
-                {Object.entries(payload).map((([key,value]) => (
+                {Object.entries(payload).sort((a,b) => a[0] < b[0] ? -1 : 1).map((([key,value]) => (
                   <TableRow key={key}>
                     <TableCell as="th">{key}</TableCell>
                     <TableCell >{String(value)}</TableCell>
