@@ -20,7 +20,7 @@
       "function": {
         "amplifystoragegroupp409e85e5PreTokenGeneration": {
           "deploymentBucketName": "amplify-amplifystoragegroupp-main-103358-deployment",
-          "s3Key": "amplify-builds/amplifystoragegroupp409e85e5PreTokenGeneration-6b64513936356f556b31-build.zip"
+          "s3Key": "amplify-builds/amplifystoragegroupp409e85e5PreTokenGeneration-4a4473312f4a34465663-build.zip"
         }
       },
       "storage": {

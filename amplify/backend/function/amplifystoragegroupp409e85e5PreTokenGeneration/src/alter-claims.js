@@ -7,10 +7,9 @@ exports.handler = async (event) => {
       claimsToAddOrOverride: {
         attribute_key1: 'attribute_value1',
         attribute_key2: 'attribute_value2',
-        ['cognito:groups']: [
-          ...event.request.groupConfiguration.groupsToOverride,
-          'appended-group-pretoken-generation'
-        ]
+      },
+      groupOverrideDetails: {
+        groupsToOverride: ['hoge']
       },
       claimsToSuppress: ['attribute_key3'],
     },
