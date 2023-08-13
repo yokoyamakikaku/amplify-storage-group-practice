@@ -9,7 +9,10 @@ exports.handler = async (event) => {
         attribute_key2: 'attribute_value2',
       },
       groupOverrideDetails: {
-        groupsToOverride: ['hoge']
+        groupsToOverride: [
+          ...event.request.groupConfiguration.groupsToOverride,
+          // 'hoge'
+        ]
       },
       claimsToSuppress: ['attribute_key3'],
     },

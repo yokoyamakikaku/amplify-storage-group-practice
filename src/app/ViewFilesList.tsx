@@ -2,7 +2,8 @@
 
 import {
   useTheme,
-  Heading, Flex, Alert,
+  Heading, Flex, Alert, View,
+  Text, Divider
 } from "@aws-amplify/ui-react"
 import { useQuery } from "@tanstack/react-query"
 import { Storage } from "@aws-amplify/storage"
@@ -16,7 +17,7 @@ const ViewFilesList = () => {
       const files = []
       let nextToken: string | undefined
       do {
-        const listOutput = await Storage.list('/', {
+        const listOutput = await Storage.list('', {
           level: 'protected',
           pageSize: "ALL",
           nextToken,
@@ -30,6 +31,8 @@ const ViewFilesList = () => {
     }
   })
 
+  console.log(query.data)
+
   return (
     <Flex
       direction="column"
@@ -40,7 +43,19 @@ const ViewFilesList = () => {
       {query.isError && (
         <Alert variation="error" title="Failed to Fetch Files List">{String(query.error)}</Alert>
       )}
-      {query.data?.length}
+      {query.isSuccess && (
+        <>
+          {query.data.map(item => (
+            <View key={item.key}>
+              <Flex gap={theme.tokens.space.xs} paddingBlock={theme.tokens.space.xxs}>
+                <Text>{item.key}</Text>
+                <Text>{item.size}</Text>
+              </Flex>
+              <Divider />
+            </View>
+          ))}
+        </>
+      )}
     </Flex>
   )
 }

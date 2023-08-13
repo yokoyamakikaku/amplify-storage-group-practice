@@ -17,10 +17,11 @@ const UploadFile = () => {
     async mutationFn ({ file: fileList }: { file: FileList }) {
       const file = fileList[0]
       const key = uuid()
+      const name = encodeURIComponent(file.name)
       const result = await Storage.put(key, file, {
         level: 'protected',
         contentType: file.type,
-        metadata: { name: file.name }
+        metadata: { name }
       })
       return result
     },
@@ -41,7 +42,7 @@ const UploadFile = () => {
         as='form' onSubmit={handleSubmit(({ file }) => mutation.mutate({ file: file }))}>
         <input id="fileInput" type="file" required {...register('file')} />
         {mutation.isError && <Alert variation="error" isDismissible>Failed to Upload File</Alert>}
-        {mutation.isError && <Alert variation="success" isDismissible>Succeeded to Upload File</Alert>}
+        {mutation.isSuccess && <Alert variation="success" isDismissible>Succeeded to Upload File</Alert>}
         <View>
           {mutation.isLoading ? (
             <Button variation="primary" disabled>Uploading <Loader /></Button>
