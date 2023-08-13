@@ -2,7 +2,17 @@
   "auth": {
     "amplifystoragegroupp409e85e5": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "amplifystoragegroupp409e85e5PreTokenGeneration",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -43,26 +53,26 @@
     }
   },
   "function": {
-    "ampstogroPretokenGeneration": {
+    "amplifystoragegroupp409e85e5PreTokenGeneration": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_ampstogroPretokenGeneration_deploymentBucketName": {
+    "AMPLIFY_function_amplifystoragegroupp409e85e5PreTokenGeneration_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "ampstogroPretokenGeneration"
+          "resourceName": "amplifystoragegroupp409e85e5PreTokenGeneration"
         }
       ]
     },
-    "AMPLIFY_function_ampstogroPretokenGeneration_s3Key": {
+    "AMPLIFY_function_amplifystoragegroupp409e85e5PreTokenGeneration_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "ampstogroPretokenGeneration"
+          "resourceName": "amplifystoragegroupp409e85e5PreTokenGeneration"
         }
       ]
     }

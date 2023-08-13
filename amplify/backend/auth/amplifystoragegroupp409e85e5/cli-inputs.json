@@ -58,15 +58,31 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
-    "userPoolGroups": true,
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "amplifystoragegroupp409e85e5PreTokenGeneration",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "userPoolGroups": false,
     "adminQueries": false,
-    "triggers": {},
+    "triggers": {
+      "PreTokenGeneration": [
+        "alter-claims",
+        "custom"
+      ]
+    },
     "hostedUI": false,
-    "authProviders": [],
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "authProviders": [],
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreTokenGeneration\",\n    \"lambdaFunctionName\": \"amplifystoragegroupp409e85e5PreTokenGeneration\"\n  }\n]"
   }
 }

@@ -2,15 +2,39 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.2.3\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
-    "CloudWatchRule": {
+    "modules": {
       "Type": "String",
-      "Default": "NONE",
-      "Description": " Schedule Expression"
+      "Default": "",
+      "Description": "Comma-delimited list of modules to be executed by a lambda trigger. Sent to resource as an env variable."
     },
-    "deploymentBucketName": {
-      "Type": "String"
+    "resourceName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "trigger": {
+      "Type": "String",
+      "Default": "true"
+    },
+    "functionName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "roleName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentResource": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentStack": {
+      "Type": "String",
+      "Default": ""
     },
     "env": {
+      "Type": "String"
+    },
+    "deploymentBucketName": {
       "Type": "String"
     },
     "s3Key": {
@@ -35,24 +59,16 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
-        },
         "Handler": "index.handler",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "ampstogroPretokenGeneration",
+            "amplifystoragegroupp409e85e5PreTokenGeneration",
             {
               "Fn::Join": [
                 "",
                 [
-                  "ampstogroPretokenGeneration",
+                  "amplifystoragegroupp409e85e5PreTokenGeneration",
                   "-",
                   {
                     "Ref": "env"
@@ -67,6 +83,9 @@
             "ENV": {
               "Ref": "env"
             },
+            "MODULES": {
+              "Ref": "modules"
+            },
             "REGION": {
               "Ref": "AWS::Region"
             }
@@ -79,8 +98,15 @@
           ]
         },
         "Runtime": "nodejs18.x",
-        "Layers": [],
-        "Timeout": 25
+        "Timeout": 25,
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        }
       }
     },
     "LambdaExecutionRole": {
@@ -89,12 +115,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "amplifystoragegrouppLambdaRole04c26e38",
+            "amplifystoragegroupp409e85e5PreTokenGeneration",
             {
               "Fn::Join": [
                 "",
                 [
-                  "amplifystoragegrouppLambdaRole04c26e38",
+                  "amplifystoragegroupp409e85e5PreTokenGeneration",
                   "-",
                   {
                     "Ref": "env"
@@ -180,11 +206,6 @@
         ]
       }
     },
-    "Region": {
-      "Value": {
-        "Ref": "AWS::Region"
-      }
-    },
     "LambdaExecutionRole": {
       "Value": {
         "Ref": "LambdaExecutionRole"
@@ -196,6 +217,11 @@
           "LambdaExecutionRole",
           "Arn"
         ]
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
       }
     }
   }

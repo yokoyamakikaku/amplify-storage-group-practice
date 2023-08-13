@@ -9,7 +9,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "ampstogroPretokenGeneration": {
+    "amplifystoragegroupp409e85e5PreTokenGeneration": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

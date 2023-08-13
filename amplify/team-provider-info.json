@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-amplifystoragegroupp-main-103358-unauthRole",
       "StackName": "amplify-amplifystoragegroupp-main-103358",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:693825121436:stack/amplify-amplifystoragegroupp-main-103358/7b581420-3979-11ee-a32b-067bd6e2202d",
-      "AmplifyAppId": "d1wqniycpr7qh1"
+      "AmplifyAppId": "d1wqniycpr7qh1",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-amplifystoragegroupp-main-103358-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -17,9 +18,9 @@
         "userPoolGroups": {}
       },
       "function": {
-        "ampstogroPretokenGeneration": {
+        "amplifystoragegroupp409e85e5PreTokenGeneration": {
           "deploymentBucketName": "amplify-amplifystoragegroupp-main-103358-deployment",
-          "s3Key": "amplify-builds/ampstogroPretokenGeneration-4d31447449486c32544d-build.zip"
+          "s3Key": "amplify-builds/amplifystoragegroupp409e85e5PreTokenGeneration-6b64513936356f556b31-build.zip"
         }
       }
     }
