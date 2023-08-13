@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "amplifystoragegroupp409e85e5": {}
+        "amplifystoragegroupp409e85e5": {},
+        "userPoolGroups": {}
       }
     }
   }
