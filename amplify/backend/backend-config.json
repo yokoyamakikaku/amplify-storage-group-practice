@@ -48,5 +48,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_ampstogroPretokenGeneration_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampstogroPretokenGeneration"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampstogroPretokenGeneration_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampstogroPretokenGeneration"
+        }
+      ]
+    }
   }
 }

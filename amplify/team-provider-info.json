@@ -15,6 +15,12 @@
       "auth": {
         "amplifystoragegroupp409e85e5": {},
         "userPoolGroups": {}
+      },
+      "function": {
+        "ampstogroPretokenGeneration": {
+          "deploymentBucketName": "amplify-amplifystoragegroupp-main-103358-deployment",
+          "s3Key": "amplify-builds/ampstogroPretokenGeneration-4d31447449486c32544d-build.zip"
+        }
       }
     }
   }
