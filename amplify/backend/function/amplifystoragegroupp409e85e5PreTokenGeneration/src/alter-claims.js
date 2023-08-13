@@ -28,6 +28,6 @@ exports.handler = async (event) => {
       claimsToSuppress: ['attribute_key3'],
     },
   };
-  // Return to Amazon Cognito
+
   return event;
 };
